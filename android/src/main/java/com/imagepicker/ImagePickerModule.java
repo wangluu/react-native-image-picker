@@ -225,6 +225,7 @@ public class ImagePickerModule extends ReactContextBaseJavaModule
     }
 
     this.options = options;
+    this.callback = callback;
 
     if (!permissionsCheck(currentActivity, callback, REQUEST_PERMISSIONS_FOR_CAMERA))
     {
@@ -274,7 +275,7 @@ public class ImagePickerModule extends ReactContextBaseJavaModule
       return;
     }
 
-    this.callback = callback;
+
 
     // Workaround for Android bug.
     // grantUriPermission also needed for KITKAT,
@@ -313,6 +314,7 @@ public class ImagePickerModule extends ReactContextBaseJavaModule
     }
 
     this.options = options;
+    this.callback = callback;
 
     if (!permissionsCheck(currentActivity, callback, REQUEST_PERMISSIONS_FOR_LIBRARY))
     {
@@ -341,8 +343,6 @@ public class ImagePickerModule extends ReactContextBaseJavaModule
       responseHelper.invokeError(callback, "Cannot launch photo library");
       return;
     }
-
-    this.callback = callback;
 
     try
     {
